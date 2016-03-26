@@ -3,9 +3,7 @@ var ReactDom = require('react-dom');
 
 
 var App = React.createClass({
-
   render : function(){
-
     return (
       <div>
         <LeftColumn />
@@ -13,7 +11,6 @@ var App = React.createClass({
 
       </div>
     )
-
   }
 });
 
@@ -21,7 +18,11 @@ var LeftColumn = React.createClass({
 
   render : function(){
 
-    return (<p> Left Side </p>);
+    return (
+
+      <div className="leftcol"> eftColumn</div>
+
+    );
      
   }
   
@@ -32,8 +33,11 @@ var RightColumn = React.createClass({
 
   render : function(){
 
+    return (
 
-    return (<p> Right Side </p>)
+      <div className="rightcol"> RightColumn </div>
+
+    )
     
   }
   
