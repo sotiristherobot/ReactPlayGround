@@ -6,11 +6,42 @@ var App = React.createClass({
 
   render : function(){
 
-    return ( <p> Hello World </p>)
+    return (
+      <div>
+
+	<LeftColumn />
+	<RightColumn />
+
+      </div>
+    )
 
   }
 
+});
+
+var LeftColumn = React.createClass({
+
+  render : function(){
+
+
+    return (<p> Left Side </p>);
+     
+  }
   
 });
+
+var RightColumn = React.createClass({
+
+
+  render : function(){
+
+
+    return (<p> Right Side </p>)
+    
+  }
+  
+  
+});
+
 
 ReactDom.render(<App/>, document.querySelector('#main'));
