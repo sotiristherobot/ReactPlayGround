@@ -8,21 +8,18 @@ var App = React.createClass({
 
     return (
       <div>
-
-	<LeftColumn />
-	<RightColumn />
+        <LeftColumn />
+	       <RightColumn />
 
       </div>
     )
 
   }
-
 });
 
 var LeftColumn = React.createClass({
 
   render : function(){
-
 
     return (<p> Left Side </p>);
      

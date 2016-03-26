@@ -16,10 +16,22 @@ var browserSync = require('browser-sync');
 var reload = browserSync.reload;
 var historyApiFallback = require('connect-history-api-fallback')
 
+var sass = require('gulp-sass');
+
 
   /*
      Styles Task
    */
+
+   gulp.task('sass', function (){
+
+    return gulp.src('css/**/*.scss')
+      .pipe(sass().on('error', sass.logError))
+      .pipe(gulp.dest('build/css/'))
+      .pipe(reload({stream:true}));
+
+   });
+
 
   gulp.task('styles',function() {
     // move over fonts
@@ -105,7 +117,8 @@ gulp.task('scripts', function() {
 });
 
 // run 'scripts' task first, then watch for future changes
-gulp.task('default', ['images','styles','scripts','browser-sync'], function() {
-  gulp.watch('css/**/*', ['styles']); // gulp watch for stylus changes
+gulp.task('default', ['images','sass','scripts','browser-sync'], function() {
+  gulp.watch('css/**/*.scss', ['sass']);
+  //gulp.watch('css/**/*', ['styles']); // gulp watch for stylus changes
   return buildScript('app.js', true); // browserify watch for JS changes
 });
