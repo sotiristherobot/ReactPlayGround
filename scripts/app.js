@@ -1,13 +1,18 @@
 var React = require('react');
 var ReactDom = require('react-dom');
 
-
 var App = React.createClass({
+
+  messageShow : function(){
+
+    alert("Hello World");
+    
+  },
   render : function(){
     return (
       <div>
-        <LeftColumn />
-	       <RightColumn />
+        <LeftColumn messageShow = {this.messageShow} />
+	<RightColumn />
 
       </div>
     )
@@ -20,7 +25,7 @@ var LeftColumn = React.createClass({
 
     return (
 
-      <div className="leftcol"> eftColumn</div>
+      <div className="leftcol" onClick={this.props.messageShow}> eftColumn</div>
 
     );
      
